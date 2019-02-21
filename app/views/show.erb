@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Title: </h2><p><%= @article.title %></p>
+    <h2>Content: </h2><p><%= @article.content%></p>
+    <a href="/articles"><button type="button" name="Articles Index">Home</button></a>
+    <a href="/articles/<%=@article.id%>/edit"><button type="button" name="Articles Index">Edit</button></a>
+    <form action="/articles/<%= @article.id %>/delete" method="POST">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <input type="submit" name="delete" value="delete">
+    </form>
+  </body>
+</html>
